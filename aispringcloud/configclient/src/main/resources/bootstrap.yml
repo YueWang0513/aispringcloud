@@ -2,7 +2,19 @@ spring:
   cloud:
     config:
       name: configclient
+      server:
+        git:
+          uri: https://github.com/YueWang0513/aispringcloud.git
+          search-paths: config
+          username: YueWang0513
+          password: dayueyue88052306
       label: master
       discovery:
         enabled: true
         service-id: configserver
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
